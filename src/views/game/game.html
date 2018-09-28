@@ -1,0 +1,35 @@
+<template>
+  <require from="styles/game.css"></require>
+  <require from="parts/block/block"></require>
+  <require from="parts/randomGif/randomGif"></require>
+  <require from="parts/quotes/quotes"></require>
+
+  <require from="parts/timeline/timeline"></require>
+
+  <div class="h-100 w-100">
+    <div class="t-a-c transition bg-c-${gameState.activeColor} t-c-white p-a-md t-s-md">
+      <quotes></quotes>
+    </div>
+
+    <div class="game-top flex-center">
+      <random-gif click.trigger="gameState.fart.play()"></random-gif>
+    </div>
+
+    <div class="game-bottom">
+      <div class="block-wrapper p-a-md">
+        <div class="${gameState.activeColor == 'blue' ? '' : 'op-0'} p-a-md transition t-c-white bg-c-blue">BLUE</div>
+        <div class="${gameState.activeColor == 'green' ? '' : 'op-0'} p-a-md transition t-c-white bg-c-green">GREEN</div>
+        <div class="${gameState.activeColor == 'red' ? '' : 'op-0'} p-a-md transition t-c-white bg-c-red">RED</div>
+
+        <block repeat.for="index of blocks" game-state.bind="gameState"></block>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="overlay-wrapper bg-c-${gameState.activeColor} flex-center t-c-white t-s-lg" if.bind="gameState.tutorial"
+    ref="tutorial">
+    Click the active color!
+  </div>
+</template>

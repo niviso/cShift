@@ -1,0 +1,15 @@
+<template>
+
+
+  <require from="styles/base.css"></require>
+  <require from="styles/app.css"></require>
+  <head>
+      <script src="http://code.jquery.com/jquery-latest.min.js"
+      type="text/javascript"></script></head>
+  <body>
+    <div class="wrapper" style="overflow: hidden">
+      <navigation router.bind="router" class="primary-navigation" ></navigation>
+      <router-view class="row content m-t-lg router"></router-view>
+      </div>
+  </body>
+</template>
