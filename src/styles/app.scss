@@ -4,4 +4,21 @@
     left: 0%;
     width: 100%;
     height: 100%;
+    overflow: hidden;
+}
+
+.iphone-wrapper{
+    position: relative;
+}
+.iphone-img{
+    width: 22vw;
+    height: 36vw;
+}
+.iphone-inner{
+    width: 18vw;
+    height: 32vw;
+    border-radius: 10px;
+    position: absolute;
+    top:2vw;
+    left:2vw;
 }
